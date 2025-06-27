@@ -60,10 +60,10 @@ const TeamCarousel = () => {
         {/* Title */}
         <div className="text-center mb-16 relative">
           <h2 className="text-7xl md:text-8xl font-black uppercase tracking-tight absolute top-0 left-1/2 transform -translate-x-1/2 pointer-events-none whitespace-nowrap opacity-10 text-purple-600">
-            NOSSA EQUIPE
+            NOSSOS ARTISTAS
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10 pt-8">
-            Nossa Equipe
+            Nossos Artistas
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto"></div>
         </div>
