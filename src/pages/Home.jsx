@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Award, Camera, Star } from 'lucide-react';
-import imgInicio from '../assets/inicio.jpg';
-import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { ArrowRight, Users, Award, Camera, Star } from "lucide-react";
+import imgInicio from "../assets/inicio.jpg";
+import { useState, useEffect } from "react";
+import TeamCarousel from "../components/TeamCarousel";
+import PhotoGallery from "@/components/PhotoGalley";
 
 // Hook para animar contadores
 function useCountUp(end, duration = 4000) {
@@ -31,25 +33,29 @@ const Home = () => {
   return (
     <div className="pt-16">
       {/* Seção Início */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        id="inicio"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src={imgInicio}
-            alt="Teatro Paideia Artes" 
+            alt="Teatro Paideia Artes"
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.4) contrast(1.1)', mixBlendMode: 'multiply' }}
+            style={{
+              filter: "brightness(0.4) contrast(1.1)",
+              mixBlendMode: "multiply",
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-purple-800/70 to-pink-800/80"></div>
         </div>
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tight mb-8">
-            <span className="gradient-anim-text">
-              PAIDEIA ARTES
-            </span>
+            <span className="gradient-anim-text">PAIDEIA ARTES</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            "A arte diz o indizível, exprime o inexprimível, traduz o intraduzível."
-              Leonardo da Vinci
+            "A arte diz o indizível, exprime o inexprimível, traduz o
+            intraduzível." Leonardo da Vinci
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
@@ -69,45 +75,63 @@ const Home = () => {
       </section>
 
       {/* Seção Quem Somos */}
-      <section id="quem-somos" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        id="quem-somos"
+        className="py-20 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Quem <span className="bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent">Somos</span>
+              Quem{" "}
+              <span className="bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent">
+                Somos
+              </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uma escola de artes dedicada a formar artistas completos e transformar vidas através da educação artística
+              Uma escola de artes dedicada a formar artistas completos e
+              transformar vidas através da educação artística
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">Nossa História</h3>
+              <h3 className="text-2xl font-bold text-gray-900">
+                Nossa História
+              </h3>
               <p className="text-gray-600 leading-relaxed">
-                Fundada em 2016, a Paideia Artes nasceu do sonho de democratizar o acesso à educação artística na Zona Norte do Rio de Janeiro. 
-                Desde então, temos formado centenas de artistas em diversas modalidades, sempre com foco na excelência e na transformação social.
+                Fundada em 2016, a Paideia Artes nasceu do sonho de democratizar
+                o acesso à educação artística na Zona Norte do Rio de Janeiro.
+                Desde então, temos formado centenas de artistas em diversas
+                modalidades, sempre com foco na excelência e na transformação
+                social.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Nossa metodologia única combina técnica, criatividade e desenvolvimento pessoal, preparando nossos alunos não apenas como artistas, 
-                mas como cidadãos conscientes e transformadores da sociedade.
+                Nossa metodologia única combina técnica, criatividade e
+                desenvolvimento pessoal, preparando nossos alunos não apenas
+                como artistas, mas como cidadãos conscientes e transformadores
+                da sociedade.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-teal-600">{alunosFormados}+</div>
+                  <div className="text-3xl font-bold text-teal-600">
+                    {alunosFormados}+
+                  </div>
                   <div className="text-gray-600">Alunos Formados</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                  <div className="text-3xl font-bold text-purple-600">{anosHistoria}</div>
+                  <div className="text-3xl font-bold text-purple-600">
+                    {anosHistoria}
+                  </div>
                   <div className="text-gray-600">Anos de História</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <img 
-                src="/quem-somos.jpg" 
-                alt="Equipe Paideia Artes" 
+              <img
+                src="/quem-somos.jpg"
+                alt="Equipe Paideia Artes"
                 className="w-full h-96 object-cover rounded-lg shadow-xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
@@ -121,10 +145,14 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Conhece Nossa <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Escola</span>
+              Conhece Nossa{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Escola
+              </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Espaços modernos e equipados para proporcionar a melhor experiência de aprendizado artístico
+              Espaços modernos e equipados para proporcionar a melhor
+              experiência de aprendizado artístico
             </p>
           </div>
 
@@ -133,9 +161,12 @@ const Home = () => {
               <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Salas de Aula Modernas</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Salas de Aula Modernas
+              </h3>
               <p className="text-gray-600">
-                Ambientes climatizados e equipados com tecnologia de ponta para proporcionar o melhor aprendizado.
+                Ambientes climatizados e equipados com tecnologia de ponta para
+                proporcionar o melhor aprendizado.
               </p>
             </div>
 
@@ -143,9 +174,12 @@ const Home = () => {
               <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Teatro Próprio</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Teatro Próprio
+              </h3>
               <p className="text-gray-600">
-                Um teatro completo com 200 lugares para apresentações e eventos, proporcionando experiência real de palco.
+                Um teatro completo com 200 lugares para apresentações e eventos,
+                proporcionando experiência real de palco.
               </p>
             </div>
 
@@ -153,22 +187,25 @@ const Home = () => {
               <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mb-6">
                 <Camera className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Estúdio de Gravação</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Estúdio de Gravação
+              </h3>
               <p className="text-gray-600">
-                Estúdio profissional para gravação de música, dublagem e produção audiovisual.
+                Estúdio profissional para gravação de música, dublagem e
+                produção audiovisual.
               </p>
             </div>
           </div>
 
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <img 
-              src="/escola-1.jpg" 
-              alt="Instalações da escola" 
+            <img
+              src="/escola-1.jpg"
+              alt="Instalações da escola"
               className="w-full h-64 object-cover rounded-lg shadow-lg"
             />
-            <img 
-              src="/escola-2.jpg" 
-              alt="Teatro da escola" 
+            <img
+              src="/escola-2.jpg"
+              alt="Teatro da escola"
               className="w-full h-64 object-cover rounded-lg shadow-lg"
             />
           </div>
@@ -176,7 +213,7 @@ const Home = () => {
       </section>
 
       {/* Seção Galeria */}
-      <section id="galeria" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      {/* <section id="galeria" className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -211,10 +248,25 @@ const Home = () => {
             </button>
           </div>
         </div>
+      </section> */}
+
+      <section className="py-20 bg-gradient-to-br from-purple-600 to-indigo-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Nossa Galeria
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-orange-400 mx-auto"></div>
+          </div>
+
+          <div className="flex justify-center">
+            <PhotoGallery />
+          </div>
+        </div>
       </section>
 
       {/* Seção Nossos Artistas */}
-      <section id="nossos-artistas" className="py-20 bg-white">
+      {/* <section id="nossos-artistas" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -268,10 +320,10 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+      <TeamCarousel />
     </div>
   );
 };
 
 export default Home;
-
