@@ -12,7 +12,7 @@ const TeamCarousel = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   const teamMembers = [
-    { name: "Ana Silva", role: "Professora de Teatro", image: team1 },
+    { name: "Ana Silvaa", role: "Professora de Teatro", image: team1 },
     { name: "Carlos Santos", role: "Professor de Música", image: team2 },
     { name: "Maria Oliveira", role: "Professora de Dança", image: team3 },
     { name: "João Costa", role: "Professor de Desenho", image: team4 },
